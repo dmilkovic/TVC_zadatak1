@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TVC_assingment1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="locale">en</string>
+    <string name="locale_name">English</string>
+    <string name="english">English</string>
+    <string name="croatian">Croatian</string>
+    <string name="no_language" translatable="false">"Jezik nije odabran" </string>
+    <string name="textRules"><b><big>Your input needs to:</big></b>
+        \n <li>Have between 5 and 13 characters</li>
+        \n <li>"Contain letter 'A' lower or upper case at least two times"</li>
+        \n <li>"Contain excatly one '7'"</li>
+        \n <li>"Have no '?'"</li>
+    </string>
+    <string name="validate">"Validate"</string>
+    <string name="alertMessage">"Enter text"</string>
+    <string name="validateButton">"Validate text"</string>
+    <string name="invalidText">"Invalid input"</string>
+</resources>
