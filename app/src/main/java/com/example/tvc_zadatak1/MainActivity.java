@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity{
     private PopupMenu languageMenu;
     private Button btn, messageBtn, textBtn;
     private View customLayout;
-    private AlertDialog builder;
     private EditText inputText;
+    private AlertDialog validateDialog;
+    private AlertDialog.Builder helloWorldDialog;
     private TextView errorText;
 
     @Override
@@ -93,12 +94,11 @@ public class MainActivity extends AppCompatActivity{
                 //else create and show an alertDialog
                 if(!isLocaleSet(getApplicationContext()))
                 {
-
                     Toast.makeText(MainActivity.this, R.string.no_language, Toast.LENGTH_SHORT).show();
                 }else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setMessage(R.string.hello_world);
-                    AlertDialog dialog = builder.create();
+                    helloWorldDialog = new AlertDialog.Builder(MainActivity.this);
+                    helloWorldDialog.setMessage(R.string.hello_world);
+                    AlertDialog dialog = helloWorldDialog.create();
                     dialog.show();
                 }
             }
@@ -109,15 +109,15 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 // set the custom layout
                 customLayout = getLayoutInflater().inflate(R.layout.edit_text_dialog, null);
-                builder = new AlertDialog.Builder(MainActivity.this).setPositiveButton(R.string.validate, null).setView(customLayout).show();
+                validateDialog = new AlertDialog.Builder(MainActivity.this).setPositiveButton(R.string.validate, null).setView(customLayout).show();
                 inputText = customLayout.findViewById(R.id.editText);
                 errorText = customLayout.findViewById(R.id.invalidText);
-                Button positiveButton = builder.getButton(AlertDialog.BUTTON_POSITIVE);
+                Button positiveButton = validateDialog.getButton(AlertDialog.BUTTON_POSITIVE);
                 positiveButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if(ValidateText.validateText(inputText.getText().toString(), getApplicationContext())) {
-                            builder.cancel();
+                            validateDialog.cancel();
                         }else{
                             errorText.setVisibility(View.VISIBLE);
                         }
