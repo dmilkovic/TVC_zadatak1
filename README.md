@@ -1,4 +1,4 @@
-# TVC_zadatak2
+# TVC_zadatak1
 The app should consist of one page and satisfy the following conditions:
 - start page needs to contain a title and a message. Style of title and message should be different and defined using styles
 - there should be three buttons underneath the message
