@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomTextView" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginTop">36sp</item>
+    </style>
+
 </resources>

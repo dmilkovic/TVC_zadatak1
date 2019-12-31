@@ -7,47 +7,46 @@ import java.util.Locale;
 
 public class UpdateLocale {
 
-    public static String getLocale(Context context)
+    static String getLocale(Context context)
     {
+        //get language in sharedPrefferences with key "Language", return "" if it doesn't exist
         String langPref = "Language";
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         String language = prefs.getString(langPref, "");
         return language;
     }
 
-    public static boolean isLocaleSet(Context context)
+    static boolean isLocaleSet(Context context)
     {
-        if(getLocale(context).equals(""))
-        {
-            return false;
-        }else
-        {
-            return true;
-        }
+        //check if language is set
+        return !getLocale(context).equals("");
     }
 
-    public static void loadLocale(Context context) {
+    static void loadLocale(Context context) {
+        //set language
         String language = getLocale(context);
         changeLang(language, context);
     }
 
-    public static void changeLang(String lang, Context context) {
+    static void changeLang(String lang, Context context) {
         if (lang.equalsIgnoreCase(""))
             return;
         Locale myLocale = new Locale(lang);
         saveLocale(lang, context);
+        //update locale
         Locale.setDefault(myLocale);
         android.content.res.Configuration config = new android.content.res.Configuration();
         config.locale = myLocale;
         context.getResources().updateConfiguration(config,context.getResources().getDisplayMetrics());
     }
 
-    public static void saveLocale(String lang, Context context) {
+    static void saveLocale(String lang, Context context) {
+        //save language to sharedPreferences
         String langPref = "Language";
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(langPref, lang);
-        editor.commit();
+        editor.apply();
     }
 }
 
