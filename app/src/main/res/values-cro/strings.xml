@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TVC_zadatak1</string>
+    <string name="app_name">TVC zadatak 1</string>
     <string name="hello_world">Pozdrav svijete!</string>
     <string name="locale">cro</string>
     <string name="locale_name">Hrvatski</string>
@@ -7,8 +7,8 @@
     <string name="croatian">Hrvatski</string>
     <string name="textRules"><b><big>Vaš unos treba sadržavati:</big></b>
         \n <li>5 do 13 znakova</li>
-        \n <li>"Minimalno dva slova 'A'/'a"</li>
-        \n <li>"Jedan broj '7'"</li>
+        \n <li>"Slovo ‘A’, ili veliko ili malo, barem 2 puta"</li>
+        \n <li>"Točno jedan broj '7'"</li>
         \n <li>"Ne smije sadržavati znak '?'"</li>
     </string>
     <string name="validate">"Provjeri"</string>

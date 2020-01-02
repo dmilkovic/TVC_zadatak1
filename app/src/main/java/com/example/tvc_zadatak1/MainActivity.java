@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //translate title to selected language
+        this.setTitle(R.string.app_name);
+
         loadLocale(MainActivity.this);
         currentLanguage = getLocale(MainActivity.this);
         setContentView(R.layout.activity_main);
